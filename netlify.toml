@@ -1,5 +1,5 @@
 [build]
-command = "npm install && npm run build && hugo --gc --minify"
+command = "hugo --gc --minify"
   publish = "public"
 
 [build.environment]
