@@ -1,0 +1,40 @@
+# Site settings
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "What Even Is Tech"
+theme = "blowfish"
+pagerSize = 5          # Number of posts per page
+
+# Author info (optional)
+[author]
+  name = "Isabellah"
+  homepage = "https://github.com/IsabellahCave"  # your GitHub or website link
+
+# Params used by Blowfish theme for socials and metadata
+[params]
+  description = "Tech explained simply — your journey starts here."
+  dateFormat = "Jan 2, 2006"
+  showReadingTime = true
+  twitter = "your_twitter_handle"    # replace or remove
+  github = "IsabellahCave"            # your GitHub username
+  linkedin = "your-linkedin-profile" # replace or remove
+
+# Menu items - navigation bar
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/posts/"
+    weight = 3
