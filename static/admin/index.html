@@ -3,17 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
+    <!-- Load Netlify Identity widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Load the Netlify CMS script -->
-     <script>
-  window.CMS_MANUAL_INIT = true;
-</script>
+    <!-- Tell CMS to wait for manual init -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-<script>
-  NetlifyCmsApp.init();
-</script>
+    <!-- Load Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 
+    <!-- Init CMS -->
+    <script>
+      NetlifyCmsApp.init();
+    </script>
+
+    <!-- Auto open login if no user -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.open();
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
+
